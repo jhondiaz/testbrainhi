@@ -14,7 +14,15 @@ RUN apt-get update \
     libpng-dev \
     libonig-dev \ 
     && apt-get clean 
+    
 
 
 # Instala herramientas adicionales de Python
-RUN pip install --no-cache-dir pipenv
+RUN pip install --no-cache-dir pipenv 
+
+COPY requirements.txt /app/requirements.txt
+
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+

@@ -13,11 +13,6 @@ from jose import jwt, JWTError
 
 app = FastAPI()
 app.state.data = {}
-#sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-#print("\n".join(sys.path))
-
-#sys.path.append("D:/testhl7/BrainHi-BackEnd/src")
 
 container = DependencyContainer()
 container.register(IUserRepository, UserRepository)
