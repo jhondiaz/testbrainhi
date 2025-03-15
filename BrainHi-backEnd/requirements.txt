@@ -1,0 +1,5 @@
+fastapi
+unicorn
+pymongo
+pika
+python-jose
