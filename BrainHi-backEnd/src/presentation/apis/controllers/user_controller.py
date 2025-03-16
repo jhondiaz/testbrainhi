@@ -25,6 +25,6 @@ async def createUser(user: User):
     repository = container.resolve(IUserRepository)
     email_service = container.resolve(IEmailNotification)
     result = await CreateUserPort(repository, email_service).execute(user)
-    return ApiResponse(Value=result) 
+    return ApiResponse(Value=result.Value,IsSuccess=result.IsSuccess,Message=result.Message) 
 
  

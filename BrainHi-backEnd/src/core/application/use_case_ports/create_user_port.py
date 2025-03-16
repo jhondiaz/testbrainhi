@@ -1,3 +1,4 @@
+import hashlib
 from src.core.domain.shemas.response_repository import RepoResponse
 from src.core.domain.interfaces.notifications.email_notification import IEmailNotification
 from src.core.domain.entities.user import User
@@ -13,6 +14,11 @@ class CreateUserPort(ICreateUser):
 
     async def execute(self, user:User)->RepoResponse:
       try:
+            
+   
+            hashedPassword = hashlib.sha256(user.password.encode('utf-8')).hexdigest()
+            user.password=hashedPassword
+
             result:RepoResponse=await self.repository.save(user)
 
             if(result.IsSuccess):

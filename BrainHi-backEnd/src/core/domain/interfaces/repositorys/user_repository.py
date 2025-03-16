@@ -9,5 +9,9 @@ class IUserRepository(ABC):
       pass
 
     @abstractmethod
-    def get(self, id:str) ->User:
+    def getById(self, id:str) ->User:
+      pass
+
+    @abstractmethod
+    def getByEmail(self, email:str) ->User:
       pass
