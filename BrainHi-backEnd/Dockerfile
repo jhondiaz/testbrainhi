@@ -1,7 +1,9 @@
 FROM python:3.12-slim
 
 # Actualiza e instala paquetes necesarios 
- WORKDIR /app
+WORKDIR /app
+
+COPY . /app
 
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -21,5 +23,6 @@ COPY ./requirements.txt /app/requirements.txt
 # Instala herramientas adicionales de Python
 RUN pip install --no-cache-dir --upgrade -r  /app/requirements.txt
 
+EXPOSE 80
 
 CMD ["uvicorn","src.main:app","--host","0.0.0.0","--port","80"]
