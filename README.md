@@ -41,6 +41,11 @@ https://github.com/jhondiaz/testbrainhi/tree/main/BrainHi-backEnd
 ```
 
 ## Create the virtual environment:
+Creat un archivo .env dentro de la carpeta app  y  agragar  estas  claves
+
+secret = "use your secret code with secrets.token_hex(10)"
+algorithm = HS256
+
 ```
 python -m venv venv
 
