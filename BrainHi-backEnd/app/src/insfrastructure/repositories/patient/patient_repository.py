@@ -30,7 +30,6 @@ class PatientRepository(IPatientRepository):
             else:
               return RepoResponse(IsSuccess=True, Value=response.json(), Message ="No se pudo registrar el paciente")   
           
-
       
       except requests.exceptions.RequestException as e:
             return RepoResponse(IsSuccess=False, Value={str(e)}, Message =f"No se pudo conectar al servidor FHIR: {str(e)}")   
