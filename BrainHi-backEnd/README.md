@@ -1,22 +1,28 @@
-![tests](https://github.com/claudiosw/python-clean-architecture-example/workflows/pytesting/badge.svg) &nbsp; ![code coverage](https://raw.githubusercontent.com/claudiosw/python-clean-architecture-example/coverage-badge/coverage.svg?raw=true)
+[![Ar](Ar "Ar")](https://firebasestorage.googleapis.com/v0/b/tdriversuper.appspot.com/o/ar.png?alt=media&token=b6be5ae4-6c61-47a5-bfdc-a2950d4d8623 "Ar")
 
 # About
-This repository is a simple example of an implementation Clean Architecture using Python.
+Proyecto  de JHON HAROLD  DIAZ
 
-# Articles about this project
-I am writing a series of Linkedin articles related to this project:
-* [Python Clean Architecture In-memory CLI implementation](https://www.linkedin.com/pulse/implementation-clean-architecture-python-part-1-cli-watanabe/): I wrote [this article](https://www.linkedin.com/pulse/implementation-clean-architecture-python-part-1-cli-watanabe/) explaining the Clean Architecture, its layers and a Python implementation of an in-memory CLI.
-* [Error Handling, Logging and Validation implementation in Python Clean Architecture](https://www.linkedin.com/pulse/implementation-clean-architecture-python-part-2-error-watanabe/): I wrote [this article](https://www.linkedin.com/pulse/implementation-clean-architecture-python-part-2-error-watanabe/) about error handling, logging and validation, including some Python best practices around these topics. I complemented our Python Clean Architecture implementation with those topics.
-* [Python Clean Architecture Flask Web API In-memory implementation](https://www.linkedin.com/pulse/implementation-clean-architecture-python-part-3-adding-watanabe/): In [this article](https://www.linkedin.com/pulse/implementation-clean-architecture-python-part-3-adding-watanabe/), I wrote about basic Flask concepts, Flask blueprints and how to test a Flask application. I also talked about the addition of a Flask web API to our Python Clean Architecture implementation. 
-* [Python Clean Architecture Flask Web API Postgresql implementation](https//www.linkedin.com/pulse/implementation-clean-architecture-python-part-4-adding-watanabe/): In [this article](https//www.linkedin.com/pulse/implementation-clean-architecture-python-part-4-adding-watanabe/), I wrote about about the inclusion of the Flask PostgreSQL flavour in my Python Clean Architecture repository. I talked about the SQLAlchemy model, Alembic database migrations, using .env files to protect sensitive information and also how to close the database connection when the http connection is closed.
+# Test BrainHi
+Plataforma  de registro de  pacientes  en  formato Hl7 .
 
-Also, [check this repository](https://github.com/claudiosw/python-best-practices) where you can find examples and explanations of Python best practices that complement this repository and its articles.
+# Tencologia
+* Python
+* .Net Core
+* MongoDb
+* Angular 19
+* RabbiMq
+* Hapi-fhir
+
+
 
 # Instalation
 
-## On prompt, acess the directory that want to download the project
+## Cuando se le solicite, acceda al directorio en el que desea descargar el proyecto.
+
+ BackEnt - Python
 ```
-git clone https://github.com/claudiosw/python-clean-architecture-example-1.git
+https://github.com/jhondiaz/testbrainhi/tree/main/BrainHi-backEnd
 ```
 
 ## Create the virtual environment:
@@ -25,7 +31,7 @@ python -m venv venv
 
 ```
 
-## Run the virtual environment:
+## Ejecute el entorno virtual:
 ### Windows
 ```
 venv\Scripts\activate
@@ -36,54 +42,69 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-## Install the required Python packages:
+## Instale los paquetes de Python necesarios::
 ```
 pip install -r requirements.txt
 pre-commit install
 ```
+## Cuando se le solicite, acceda al directorio en el que desea descargar el proyecto.
 
-# Run the In-Memory CLI
-```
-python .\cli_memory_process_handler.py
-```
+FrontEnd- Angular 19
 
-# Run the In-Memory Flask API
-```
-python .\flask_memory_process_handler.py
-```
+##Requisitos Previos
+Antes de instalar Angular 19, asegúrate de contar con los siguientes requisitos:
 
-# Prepare the PostgreSQL database
+✅ Node.js (versión 18.x o superior)
+✅ npm (gestor de paquetes de Node.js)
+✅ Angular CLI (interfaz de línea de comandos de Angular)
+✅ Git (opcional, pero recomendado)
 
-To use the PostgreSQL flavour of our app, we need to install PostgreSQL software. It can be in other machine as well. We will need a database and a user to access this database.
-
-Create a .env file. Use the .env.example file as a template. Set the values considering your scenario.
-
-## Apply database migrations
-
-With the PostgreSQL database installed and configured, you can apply the database migrations with the command below:
+##Paso 1: Verificar Instalación de Node.js y npm
+Abre una terminal y ejecuta los siguientes comandos para verificar las versiones instaladas:
 
 ```
-alembic upgrade head
+node -v
+npm -v
+
+```
+##Paso 2: Instalar Angular CLI
+Ejecuta el siguiente comando para instalar Angular CLI globalmente:
+
+```
+npm install -g @angular/cli
+
+```
+Verifica la instalación con:
+
+```
+ng version
+
 ```
 
-# Run the PostgreSQL Flask API
+Asegúrate de que aparece Angular CLI: 19.x.x en la salida.
+
+#Paso 3: Configuracion
+
+Entra a las  carpeta   src/app/core/controllers
+
+edita  el  archivo urlControllers.ts
+
+[![config](config "config")](https://firebasestorage.googleapis.com/v0/b/tdriversuper.appspot.com/o/config_base.png?alt=media&token=6c54483f-996e-4b40-b6b7-3d537026c7ac "config")
+
+
+
+
 ```
-python .\flask_postgresql_process_handler.py
+ng serve
+
 ```
 
-# Documentation
-
-## API Documentation of the Flask PostgreSQL flavor of this project:
-You can access the API documentation [here](https://documenter.getpostman.com/view/27866946/2s93saZYEK).
-
-## Documentation Generated by Sphinx
-You can see the documentation of this project generated by Sphinx in [here](https://claudiosw.github.io/python-clean-architecture-example/docs/build/html/index.html).
+#Paso 3: Ejecutar la Aplicación
+Para iniciar el servidor de desarrollo, ejecuta:
 
 
-# Closing
 
-I hope this repository and my article series were valuable to you. If that was the case, please star it.
+```
+ng serve
 
-If you want to contact me, reach me on [LinkedIn](https://www.linkedin.com/in/claudiosw/) or [Twitter](https://twitter.com/ClaudioShigueoW).
-
-I am looking for a Python position. I also offer paid mentoring.
+```
