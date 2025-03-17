@@ -46,6 +46,11 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 pre-commit install
+
+uvicorn src.main:app --host 0.0.0.0 --port 8081 --reload
+
+http://localhost:8081/docs
+
 ```
 ## Cuando se le solicite, acceda al directorio en el que desea descargar el proyecto.
 
