@@ -118,7 +118,7 @@ Entra a las  carpeta   src/app/core/controllers
 
 edita  el  archivo urlControllers.ts
 
-[![config](config "config")](https://firebasestorage.googleapis.com/v0/b/tdriversuper.appspot.com/o/config_base.png?alt=media&token=6c54483f-996e-4b40-b6b7-3d537026c7ac "config")
+[![config](config "config")](https://github.com/jhondiaz/testbrainhi/blob/main/config_base.png "config")
 
 
 
