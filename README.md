@@ -94,11 +94,6 @@ edita  el  archivo urlControllers.ts
 
 
 
-```
-ng serve
-
-```
-
 #Paso 3: Ejecutar la Aplicación
 Para iniciar el servidor de desarrollo, ejecuta:
 
