@@ -7,7 +7,7 @@ Proyecto  de JHON HAROLD  DIAZ
 Plataforma  de registro de  pacientes  en  formato Hl7 .
 
 # Tencologia
-* Python
+* FastAPI - Python 
 * .Net Core
 * MongoDb
 * Angular 19
