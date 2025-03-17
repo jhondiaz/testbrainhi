@@ -44,6 +44,7 @@ export const authInterceptor = (
         });
     }
 
+
     // Response
     return next(newReq).pipe(
         catchError((error) => {

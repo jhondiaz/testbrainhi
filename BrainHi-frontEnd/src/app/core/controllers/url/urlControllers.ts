@@ -9,4 +9,18 @@ export const UrlControllers = {
             RegisterUser:'Authentication/RegisterUser'
         },
     },
+
+    User: {
+        Name: 'User',
+        Methods: {
+            Register:'User/Register'
+        },
+    },
+
+    Patient: {
+        Name: 'Patient',
+        Methods: {
+            Register:'Patient/Register'
+        },
+    },
 }

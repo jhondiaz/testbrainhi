@@ -1,6 +1,9 @@
 from datetime import datetime
 import logging
 from fastapi import APIRouter, HTTPException, status
+from src.core.application.patien_case_port.create_patient_port import CreatePatientPort
+from src.core.domain.entities.patient import Patient
+from src.core.domain.interfaces.repositorys.patient_repository import IPatientRepository
 from src.core.domain.dtos.register_user_dto import RegisterUserDTO
 from src.core.containers import container
 from src.core.domain.interfaces.notifications.email_notification import (
@@ -13,15 +16,15 @@ from src.core.domain.shemas.response_Model import ApiResponse
 from src.core.application.use_case_ports.get_user_by_Id_port import GetUserByIdPort
 
 
-userApi = APIRouter(prefix="/Api")
+patientApi = APIRouter(prefix="/Api")
 container = container.DependencyContainer()
 
 
-@userApi.get("/User/{id}", response_model=ApiResponse, status_code=status.HTTP_200_OK)
-async def getUserById(id: str):
+@patientApi.get("/Patient/{id}", response_model=ApiResponse, status_code=status.HTTP_200_OK)
+async def getPatientById(id: str):
     try:
        
-        repository = container.resolve(IUserRepository)
+        repository = container.resolve(IPatientRepository)
         user = await GetUserByIdPort(repository).execute(id)
         return ApiResponse(Value=user)
 
@@ -38,29 +41,20 @@ async def getUserById(id: str):
         return ApiResponse(Value=None, Codigo=3, Message="Error inesperado, intente nuevamente")
 
 
-@userApi.post(
-    "/User/Register", response_model=ApiResponse, status_code=status.HTTP_200_OK
+@patientApi.post(
+    "/Patient/Register", response_model=ApiResponse, status_code=status.HTTP_200_OK
 )
-async def createUser(dato: RegisterUserDTO):
+async def createPatient(dato: Patient):
     try:
-
-        user: User = User(
-            id="",
-            firstName=dato.firstName,
-            lastName=dato.lastName, 
-            email=dato.email,
-            phone=dato.phone,
-            createDate=datetime.now(),
-            password=dato.password
-        )
-
-        repository = container.resolve(IUserRepository)
+      
+        repository = container.resolve(IPatientRepository)
         email_service = container.resolve(IEmailNotification)
-        result = await CreateUserPort(repository, email_service).execute(user)
-        return ApiResponse(
-            Value=result.Value, IsSuccess=result.IsSuccess, Message=result.Message
-        )
-    
+        result = await CreatePatientPort(repository, email_service).execute(dato)
+        if result:
+            return ApiResponse(
+                Value=result.Value, IsSuccess=result.IsSuccess, Message=result.Message
+            )
+        
     except ValueError as ve:
         logging.error(f"Error de validación: {ve}")
         return ApiResponse(Value=None, Codigo=1, Message="Error de validación")

@@ -97,14 +97,14 @@ export class AuthSignUpComponent implements OnInit {
         this._authService.signUp(this.signUpForm.value).subscribe(
             (response) => {
                 // Navigate to the confirmation required page
-                this._router.navigateByUrl('/confirmation-required');
+                this._router.navigateByUrl('/sign-in');
             },
             (response) => {
                 // Re-enable the form
-                this.signUpForm.enable();
+              //  this.signUpForm.enable();
 
                 // Reset the form
-                this.signUpNgForm.resetForm();
+               // this.signUpNgForm.resetForm();
 
                 // Set the alert
                 this.alert = {

@@ -74,7 +74,7 @@ export class AuthService {
                         id: Value.user.id,
                         name:Value.user.firstName+' '+ Value.user.lastName,
                         email: Value.user.email,
-                        status:'line',
+                        status:'online',
                         avatar:'johndiaz.png'
                     };
                     // id: string;
@@ -105,9 +105,9 @@ export class AuthService {
                 `${this.urlBase}/${UrlControllers.Authentication.Methods.SignInUsingToken}`,
                 {
                     params:{
-                         token: this.accessToken, 
+                         token: this.accessToken,
                     }
-                                    
+
                 })
             .pipe(
                 catchError(() =>
@@ -152,12 +152,18 @@ export class AuthService {
      * @param user
      */
     signUp(user: {
-        name: string;
+        id?:string;
+        firstName: string;
+        lastName: string;
+        phone: string;
         email: string;
         password: string;
-        company: string;
+        createDate?:string;
     }): Observable<any> {
-        return this._httpClient.post('api/auth/sign-up', user);
+        this.urlBase = UrlControllers.Urlbase;
+        user.createDate= new Date().toDateString();
+        user.id='';
+        return this._httpClient.post(`${this.urlBase}/${UrlControllers.User.Methods.Register}`, user);
     }
 
     /**
@@ -194,4 +200,12 @@ export class AuthService {
         // If the access token exists, and it didn't expire, sign in using it
         return of(true);
     }
+
+
+    registerPatient(patient:any): Observable<any> {
+        this.urlBase = UrlControllers.Urlbase;
+        return this._httpClient.post(`${this.urlBase}/${UrlControllers.Patient.Methods.Register}`, patient);
+    }
+
+
 }

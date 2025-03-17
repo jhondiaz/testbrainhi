@@ -1,9 +1,178 @@
-<div class="flex min-w-0 flex-auto flex-col">
-    <!-- Main -->
-    <div class="flex-auto p-6 sm:p-10">
-        <!-- CONTENT GOES HERE -->
-        <div
-            class="h-400 max-h-400 min-h-400 rounded-2xl border-2 border-dashed border-gray-300"
-        ></div>
+<div class="flex min-w-0 flex-auto flex-col items-center sm:justify-center">
+    <div
+        class="w-full px-4 py-8 sm:bg-card sm:w-auto sm:rounded-2xl sm:p-12 sm:shadow"
+    >
+        <div class="mx-auto w-full max-w-80 sm:mx-0 sm:w-80">
+            <!-- Title -->
+            <div
+                class="mt-8 text-3xl font-extrabold leading-tight tracking-tight"
+            >
+                Registar paciente
+            </div>
+
+            <!-- Alert -->
+            @if (showAlert) {
+                <fuse-alert
+                    class="mt-8"
+                    [appearance]="'outline'"
+                    [showIcon]="false"
+                    [type]="alert.type"
+                    [@shake]="alert.type === 'error'"
+                >
+                    {{ alert.message }}
+                </fuse-alert>
+            }
+
+            <!-- Sign Up form -->
+            <form class="mt-8" [formGroup]="signUpForm">
+                <!-- Name field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Primer nombre</mat-label>
+                    <input
+                        id="firstName"
+                        matInput
+                        [formControlName]="'firstName'"
+                    />
+                    @if (signUpForm.get('firstName').hasError('required')) {
+                        <mat-error> Primer nombre is required </mat-error>
+                    }
+                </mat-form-field>
+
+                <!-- Name field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Segundo nombre</mat-label>
+                    <input
+                        id="middleName"
+                        matInput
+                        [formControlName]="'middleName'"
+                    />
+
+                </mat-form-field>
+
+                  <!-- Name field -->
+                  <mat-form-field class="w-full">
+                    <mat-label>Primer apellido</mat-label>
+                    <input
+                        id="firstName"
+                        matInput
+                        [formControlName]="'firstName'"
+                    />
+                    @if (signUpForm.get('firstName').hasError('required')) {
+                        <mat-error> Primer apellido is required </mat-error>
+                    }
+                </mat-form-field>
+
+                <!-- Name field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Segundo apellido</mat-label>
+                    <input
+                        id="secondlastName"
+                        matInput
+                        [formControlName]="'secondlastName'"
+                    />
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Genero</mat-label>
+                    <mat-select [formControlName]="'gender'">
+                        <mat-option value="male">Masculino</mat-option>
+                        <mat-option value="female">Femenino</mat-option>
+                    </mat-select>
+                    <mat-icon
+                        class="icon-size-5"
+                        matPrefix
+                        [svgIcon]="'heroicons_solid:user-circle'"
+                    ></mat-icon>
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input
+                        matInput
+                        [matDatepicker]="picker"
+                        [formControlName]="'birthDate'"
+                    />
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle
+                        matIconSuffix
+                        [for]="picker"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Name field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Direccion</mat-label>
+                    <input
+                        id="address_line"
+                        matInput
+                        [formControlName]="'address_line'"
+                    />
+                    @if (signUpForm.get('address_line').hasError('required')) {
+                        <mat-error> Segundo nombre required </mat-error>
+                    }
+                </mat-form-field>
+
+                   <!-- Name field -->
+                   <mat-form-field class="w-full">
+                    <mat-label>Ciudad</mat-label>
+                    <input
+                        id="address_city"
+                        matInput
+                        [formControlName]="'address_city'"
+                    />
+                    @if (signUpForm.get('address_city').hasError('required')) {
+                        <mat-error> Ciudad required </mat-error>
+                    }
+                </mat-form-field>
+
+                 <!-- Name field -->
+                 <mat-form-field class="w-full">
+                    <mat-label>Codigo pais</mat-label>
+                    <input
+                        id="address_country"
+                        matInput
+                        [formControlName]="'address_country'"
+                    />
+                    @if (signUpForm.get('address_country').hasError('required')) {
+                        <mat-error> Ciudad required </mat-error>
+                    }
+                </mat-form-field>
+
+
+                <!-- Email field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Email</mat-label>
+                    <input id="email" matInput [formControlName]="'email'" />
+                    @if (signUpForm.get('email').hasError('required')) {
+                        <mat-error> Email address is required </mat-error>
+                    }
+                    @if (signUpForm.get('email').hasError('email')) {
+                        <mat-error>
+                            Please enter a valid email address
+                        </mat-error>
+                    }
+                </mat-form-field>
+
+                <!-- Submit button -->
+                <button
+                    class="fuse-mat-button-large mt-6 w-full"
+                    mat-flat-button
+                    [color]="'primary'"
+                    [disabled]="!this.signUpForm.invalid"
+                    (click)="register()"
+                >
+                    @if (!signUpForm.disabled) {
+                        <span> Registrar </span>
+                    }
+                    @if (signUpForm.disabled) {
+                        <mat-progress-spinner
+                            [diameter]="24"
+                            [mode]="'indeterminate'"
+                        ></mat-progress-spinner>
+                    }
+                </button>
+            </form>
+        </div>
     </div>
 </div>

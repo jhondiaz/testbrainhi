@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 import hashlib
+import logging
 import time
 from fastapi import APIRouter, HTTPException, status
 from src.core.application.use_case_ports.get_user_login_port import GetLogInPort
@@ -60,9 +61,11 @@ def  SignInUsingToken(token: str) -> bool :
             
             return ApiResponse(Value=True)
 
-        except ExpiredSignatureError:
+        except ExpiredSignatureError as ex:
+             logging.error(f"Error: {ex}")
              return ApiResponse(Value=False)
-        except JWTError:
+        except JWTError as ex:
+             logging.error(f"Error: {ex}")
              return ApiResponse(Value=False)
         
   
