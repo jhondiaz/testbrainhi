@@ -9,7 +9,7 @@ services:
     working_dir: /usr/src/app
     command: tail -f /dev/null #mantenedor el contenedor en ejecución
     ports:
-      - "8081:8081"
+      - "80:80"
     environment:
       - PYTHONUNBUFFERED=1
     networks:

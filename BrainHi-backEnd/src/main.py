@@ -19,7 +19,7 @@ from jose import jwt, JWTError
 
 app = FastAPI(
     title="Api testBranhi",
-    version="0.0.1",
+    version="0.0.2",
 )
 app.state.data = {}
 
