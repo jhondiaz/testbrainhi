@@ -17,7 +17,10 @@ from src.presentation.apis.controllers.authentication_controller import (
 )
 from jose import jwt, JWTError
 
-app = FastAPI()
+app = FastAPI(
+    title="Api testBranhi",
+    version="0.0.1",
+)
 app.state.data = {}
 
 container = DependencyContainer()
@@ -29,7 +32,7 @@ SECRET_KEY = "your_secret_key"
 ALGORITHM = "HS256"
 
 
-#@app.middleware("http")
+@app.middleware("http")
 async def add_check_jwt(request: Request, call_next):
    # print(request.url.path )
 
