@@ -26,6 +26,10 @@ Hapi - fhir
 
 http://hapi.fhir.org/baseR4
 
+Video
+
+https://drive.google.com/file/d/1gxHD7bpxp1usZSxCL1uwsVGlLMHpBp8s/view?usp=sharing
+
 # Instalation
 
 ## Cuando se le solicite, acceda al directorio en el que desea descargar el proyecto.
