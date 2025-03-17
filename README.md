@@ -118,7 +118,7 @@ Entra a las  carpeta   src/app/core/controllers
 
 edita  el  archivo urlControllers.ts
 
-[![config](config "config")](https://github.com/jhondiaz/testbrainhi/blob/main/config_base.png "config")
+![Configuracion de la Url](https://github.com/jhondiaz/testbrainhi/blob/main/config_base.png)
 
 
 
