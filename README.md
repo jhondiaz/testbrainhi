@@ -90,6 +90,8 @@ npm -v
 Ejecuta el siguiente comando para instalar Angular CLI globalmente:
 
 ```
+npm install
+
 npm install -g @angular/cli
 
 ```
