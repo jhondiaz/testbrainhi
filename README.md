@@ -14,7 +14,17 @@ Plataforma  de registro de  pacientes  en  formato Hl7 .
 * RabbiMq
 * Hapi-fhir
 
+# Demo
+FrontEnd
+http://130.131.161.243/
 
+BackEnd
+
+http://135.233.78.208/
+
+Hapi - fhir
+
+http://hapi.fhir.org/baseR4
 
 # Instalation
 
