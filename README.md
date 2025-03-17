@@ -1,4 +1,4 @@
-[Arquitectura](https://github.com/jhondiaz/testbrainhi/blob/main/ar.png)
+![Arquitectura](https://github.com/jhondiaz/testbrainhi/blob/main/ar.png)
 
 # About
 Proyecto  de JHON HAROLD  DIAZ
