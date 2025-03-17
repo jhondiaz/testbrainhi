@@ -3,7 +3,7 @@ FROM python:3.12-slim
 # Actualiza e instala paquetes necesarios 
 WORKDIR /app
 
-COPY . /app
+#COPY . /app
 
 RUN apt-get update \
     && apt-get upgrade -y \
