@@ -106,7 +106,7 @@ export class ExampleComponent implements OnInit {
 
         // Sign up
         this._authService.registerPatient(
-          this.convertFormToFHIR(this.signUpForm.value)
+          this.convertFormToFHIR()
         ).subscribe({
            next: (response) => {
                 // Navigate to the confirmation required page
@@ -134,8 +134,8 @@ export class ExampleComponent implements OnInit {
     }
 
 
-    convertFormToFHIR(signUpForm: FormGroup): any {
-        const formValues = signUpForm.value;
+    convertFormToFHIR(): any {
+        const formValues = this.signUpForm.value;
 
         return {
             name: [
