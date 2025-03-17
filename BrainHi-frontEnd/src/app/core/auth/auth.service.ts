@@ -204,6 +204,7 @@ export class AuthService {
 
     registerPatient(patient:any): Observable<any> {
         this.urlBase = UrlControllers.Urlbase;
+        console.log(patient);
         return this._httpClient.post(`${this.urlBase}/${UrlControllers.Patient.Methods.Register}`, patient);
     }
 

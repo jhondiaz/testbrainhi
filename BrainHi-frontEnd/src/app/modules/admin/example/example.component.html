@@ -53,11 +53,11 @@
                   <mat-form-field class="w-full">
                     <mat-label>Primer apellido</mat-label>
                     <input
-                        id="firstName"
+                        id="lastName"
                         matInput
-                        [formControlName]="'firstName'"
+                        [formControlName]="'lastName'"
                     />
-                    @if (signUpForm.get('firstName').hasError('required')) {
+                    @if (signUpForm.get('lastName').hasError('required')) {
                         <mat-error> Primer apellido is required </mat-error>
                     }
                 </mat-form-field>
@@ -159,7 +159,7 @@
                     class="fuse-mat-button-large mt-6 w-full"
                     mat-flat-button
                     [color]="'primary'"
-                    [disabled]="!this.signUpForm.invalid"
+                    [disabled]="this.signUpForm.invalid"
                     (click)="register()"
                 >
                     @if (!signUpForm.disabled) {

@@ -114,6 +114,7 @@ export class ExampleComponent implements OnInit {
                console.log(response);
             },
            error: (response) => {
+                 console.log(response);
                 // Re-enable the form
                 this.signUpForm.enable();
 
