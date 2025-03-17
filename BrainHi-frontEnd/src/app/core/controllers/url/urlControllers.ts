@@ -9,7 +9,6 @@ export const UrlControllers = {
             RegisterUser:'Authentication/RegisterUser'
         },
     },
-
     User: {
         Name: 'User',
         Methods: {
