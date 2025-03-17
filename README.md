@@ -61,7 +61,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 pre-commit install
 
-uvicorn src.main:app --host 0.0.0.0 --port 8081 --reload
+uvicorn main:app --host 0.0.0.0 --port 80 --reload
 
 http://localhost:8081/docs
 
