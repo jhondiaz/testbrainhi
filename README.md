@@ -14,7 +14,22 @@ Plataforma  de registro de  pacientes  en  formato Hl7 .
 * RabbiMq
 * Hapi-fhir
 
+# Demo
+FrontEnd
 
+http://130.131.161.243/
+
+BackEnd
+
+http://135.233.78.208/
+
+Hapi - fhir
+
+http://hapi.fhir.org/baseR4
+
+Video
+
+https://drive.google.com/file/d/1gxHD7bpxp1usZSxCL1uwsVGlLMHpBp8s/view?usp=sharing
 
 # Instalation
 
@@ -47,7 +62,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 pre-commit install
 
-uvicorn src.main:app --host 0.0.0.0 --port 8081 --reload
+uvicorn main:app --host 0.0.0.0 --port 80 --reload
 
 http://localhost:8081/docs
 
@@ -76,6 +91,8 @@ npm -v
 Ejecuta el siguiente comando para instalar Angular CLI globalmente:
 
 ```
+npm install
+
 npm install -g @angular/cli
 
 ```
