@@ -112,6 +112,16 @@ export class ExampleComponent implements OnInit {
                 // Navigate to the confirmation required page
                // this._router.navigateByUrl('/confirmation-required');
                console.log(response);
+               this.signUpForm.enable();
+               if(response.Codigo==0){
+
+                this.showAlert = true;
+                  // Set the alert
+                  this.alert = {
+                    type: 'success',
+                    message: response.Message,
+                };
+               }
             },
            error: (response) => {
                  console.log(response);
