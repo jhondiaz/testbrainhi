@@ -3,7 +3,9 @@ FROM python:3.12-slim
 # Actualiza e instala paquetes necesarios 
 WORKDIR /app
 
-#COPY . /app
+COPY . /app
+
+ENV PYTHONPATH=/app
 
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -18,11 +20,11 @@ RUN apt-get update \
     libonig-dev \ 
     && apt-get clean 
     
-COPY ./requirements.txt /app/requirements.txt
 
 # Instala herramientas adicionales de Python
 RUN pip install --no-cache-dir --upgrade -r  /app/requirements.txt
 
+
 EXPOSE 80
 
-CMD ["uvicorn","src.main:app","--host","0.0.0.0","--port","80"]
+CMD ["uvicorn","main:app","--host","0.0.0.0","--port","80"]

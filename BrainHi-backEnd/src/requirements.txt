@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-pymongo
-pika
-python-jose
-fhirclient
-requests
