@@ -1,5 +1,5 @@
 export const UrlControllers = {
-    Urlbase:"http://localhost:8081/Api",
+    Urlbase:"http://135.233.78.208/Api",
     Authentication: {
         Name: 'Authentication',
         Methods: {
@@ -9,7 +9,6 @@ export const UrlControllers = {
             RegisterUser:'Authentication/RegisterUser'
         },
     },
-
     User: {
         Name: 'User',
         Methods: {

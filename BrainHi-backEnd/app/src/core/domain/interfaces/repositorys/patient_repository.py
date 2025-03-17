@@ -10,6 +10,6 @@ class IPatientRepository(ABC):
       pass
 
     @abstractmethod
-    def getById(self, id:str) ->Patient:
+    def getById(self, id:str) ->RepoResponse:
       pass
 

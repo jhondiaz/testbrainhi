@@ -1,6 +1,8 @@
 from datetime import datetime
 import logging
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
+from src.core.application.patien_case_port.get_by_id_patient_port import GetByIdPatientPort
+from src.core.domain.auth.auth_bearer import JWTBearer
 from src.core.application.patien_case_port.create_patient_port import CreatePatientPort
 from src.core.domain.entities.patient import Patient
 from src.core.domain.interfaces.repositorys.patient_repository import IPatientRepository
@@ -20,12 +22,18 @@ patientApi = APIRouter(prefix="/Api")
 container = container.DependencyContainer()
 
 
-@patientApi.get("/Patient/{id}", response_model=ApiResponse, status_code=status.HTTP_200_OK)
+@patientApi.get("/Patient/{id}",
+                 response_model=ApiResponse,
+                 status_code=status.HTTP_200_OK,
+                 dependencies=[Depends(JWTBearer())],
+                 tags=["posts"]
+               )
+
 async def getPatientById(id: str):
     try:
        
         repository = container.resolve(IPatientRepository)
-        user = await GetUserByIdPort(repository).execute(id)
+        user = await GetByIdPatientPort(repository).execute(id)
         return ApiResponse(Value=user)
 
     except ValueError as ve:
@@ -42,7 +50,12 @@ async def getPatientById(id: str):
 
 
 @patientApi.post(
-    "/Patient/Register", response_model=ApiResponse, status_code=status.HTTP_200_OK
+    "/Patient/Register", 
+    response_model=ApiResponse, 
+    status_code=status.HTTP_200_OK,
+    dependencies=[Depends(JWTBearer())],
+    tags=["posts"]
+
 )
 async def createPatient(dato: Patient):
     try:

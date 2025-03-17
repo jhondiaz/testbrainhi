@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/59edd23e-ac2a-4338-832c-76bf59847756/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/frontendbrainhi",
+    "appService.deploySubpath": "."
+}

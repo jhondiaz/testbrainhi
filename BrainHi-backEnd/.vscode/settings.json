@@ -2,5 +2,9 @@
 
    
     "python.envFile": "${workspaceFolder}/.env",
-    "python.analysis.extraPaths": ["./src"]
+    "python.analysis.extraPaths": [
+        "./src"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/59edd23e-ac2a-4338-832c-76bf59847756/resourceGroups/test/providers/Microsoft.Web/sites/backendbrainhi",
+    "appService.deploySubpath": "."
 }

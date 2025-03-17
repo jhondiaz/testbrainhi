@@ -1,7 +1,12 @@
 FROM python:3.12-slim
 
 # Actualiza e instala paquetes necesarios 
- 
+WORKDIR /app
+
+COPY . /app
+
+ENV PYTHONPATH=/app
+
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
@@ -16,13 +21,10 @@ RUN apt-get update \
     && apt-get clean 
     
 
-
 # Instala herramientas adicionales de Python
-RUN pip install --no-cache-dir pipenv 
+RUN pip install --no-cache-dir --upgrade -r  /app/requirements.txt
 
-COPY requirements.txt /app/requirements.txt
 
-WORKDIR /app
+EXPOSE 80
 
-RUN pip install -r requirements.txt
-
+CMD ["uvicorn","main:app","--host","0.0.0.0","--port","80"]
