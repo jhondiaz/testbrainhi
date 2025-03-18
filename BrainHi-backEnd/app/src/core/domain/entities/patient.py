@@ -13,6 +13,7 @@ class Patient(BaseModel):
     name: List[HumanName]
     gender: Optional[str] = None
     birthDate: Optional[str] = None
+    email: Optional[str] = None
    
 class Config:
    json_encoders = {

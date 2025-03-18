@@ -20,7 +20,7 @@ class CreatePatientPort(ICreatePatient):
             if(result.IsSuccess):
               print(result)
               self.emailNotification.config("systemaf5@gmail.com")
-              self.emailNotification.send(f"Paciente\n:{result.Value}","gerente@tdriver.co")
+              self.emailNotification.send(f"Paciente\n:{result.Value}",patient.email)
               return result  
             else:
              return result

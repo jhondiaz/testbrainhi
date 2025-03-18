@@ -109,8 +109,7 @@ export class ExampleComponent implements OnInit {
           this.convertFormToFHIR()
         ).subscribe({
            next: (response) => {
-                // Navigate to the confirmation required page
-               // this._router.navigateByUrl('/confirmation-required');
+
                console.log(response);
                this.signUpForm.enable();
                if(response.Codigo==0){
@@ -162,7 +161,8 @@ export class ExampleComponent implements OnInit {
                     city: formValues.address_city,
                     country: formValues.address_country
                 }
-            ]
+            ],
+            email:formValues.email
         };
     }
 

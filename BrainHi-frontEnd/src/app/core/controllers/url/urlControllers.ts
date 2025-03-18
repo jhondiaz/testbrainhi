@@ -1,5 +1,5 @@
 export const UrlControllers = {
-    Urlbase:"http://135.233.78.208/Api",
+    Urlbase:"http://20.72.171.198/Api",
     Authentication: {
         Name: 'Authentication',
         Methods: {
