@@ -1,4 +1,4 @@
-[![Ar](Ar "Ar")](https://firebasestorage.googleapis.com/v0/b/tdriversuper.appspot.com/o/ar.png?alt=media&token=b6be5ae4-6c61-47a5-bfdc-a2950d4d8623 "Ar")
+![Arquitectura](https://github.com/jhondiaz/testbrainhi/blob/main/ar.png)
 
 # About
 Proyecto  de JHON HAROLD  DIAZ
@@ -118,7 +118,7 @@ Entra a las  carpeta   src/app/core/controllers
 
 edita  el  archivo urlControllers.ts
 
-[![config](config "config")](https://firebasestorage.googleapis.com/v0/b/tdriversuper.appspot.com/o/config_base.png?alt=media&token=6c54483f-996e-4b40-b6b7-3d537026c7ac "config")
+![Configuracion de la Url](https://github.com/jhondiaz/testbrainhi/blob/main/config_base.png)
 
 
 
